@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stye.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>ToDo List</title>
+  </head>
+  <body>
+    <div class="cardContainer">
+      <h1>ToDo List</h1>
+      <div class="input">
+        <input type="text" name="" class="inputBox" id="inputBox" />
+        <button class="myBtn" id="myBtn" onclick="add()">Post</button>
+      </div>
+      <ul id="unOrderList"></ul>
+    </div>
+    <script>
+      let box = document.getElementById("inputBox");
+      let ul = document.getElementById("unOrderList");
+      function add() {
+        let li = document.createElement("li");
+        li.innerHTML = `${box.value} <i id="icon" onclick="deleteItem(event)" class="fa-solid fa-trash"></i>`;
+        ul.append(li);
+        li.style.border = "2px solid gray";
+        li.style.padding = "1rem";
+        li.style.listStyle = "none";
+        li.style.display = "flex";
+        li.style.flexDirection = "flexStart";
+        li.style.margin = "1rem";
+        li.style.fontFamily = "Franklin Gothic Medium";
+        li.style.alignItems = "center";
+        li.style.textAlign = "center";
+        li.style.width = "auto";
+        li.style.height = "1rem";
+        li.style.gap = "1rem";
+        li.style.borderRadius = "25px";
+        li.style.boxShadow = "0px 5px 10px #d1d5ff";
+      }
+      function deleteItem(event) {
+        event.target.parentElement.remove();
+      }
+    </script>
+  </body>
+</html>
